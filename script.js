@@ -12,7 +12,7 @@ function selectOption(option) {
     } else if (option === 'no') {
         // Change text on the "No" button to "You sure?"
         document.getElementById('no-button').innerText = 'You sure? Still no?';
-        if(option === 'no'){
+        if(option === 'You sure? Still no?'){
             document.getElementById('no-button').innerText = 'Pretty please?';
             // Increase font size of "Yes" button
             var yesButton = document.getElementById('yes-button');
