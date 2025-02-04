@@ -14,15 +14,17 @@ function selectOption(option) {
         var noButton = document.getElementById('no-button');
         if (noButton.innerText === 'No') {
             noButton.innerText = 'You sure? Still no?';
+            
+            if (noButton.innerText === 'You sure? Still no?') {
+                noButton.innerText = 'Pretty please baby? Still a no?';
+                // Increase font size of "Yes" button
+                var yesButton = document.getElementById('yes-button');
+                var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
+                var newSize = parseFloat(currentFontSize) * 2; // Increase font size by 2 times
+                yesButton.style.fontSize = newSize + 'px';
+            }
         } 
-        if (noButton.innerText === 'You sure? Still no?') {
-            noButton.innerText = 'Pretty please baby? Still a no?';
-            // Increase font size of "Yes" button
-            var yesButton = document.getElementById('yes-button');
-            var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
-            var newSize = parseFloat(currentFontSize) * 2; // Increase font size by 2 times
-            yesButton.style.fontSize = newSize + 'px';
-        }
+        
     } else {
         // If neither "Yes" nor "No" was clicked, show an alert message
         alert('Invalid option!');
