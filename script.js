@@ -11,20 +11,12 @@ function selectOption(option) {
         });
     } else if (option === 'no') {
         // Change text on the "No" button to "You sure?"
-        var noButton = document.getElementById('no-button');
-        if (noButton.innerText === 'No') {
-            noButton.innerText = 'You sure? Still no?';
-            
-            if (noButton.innerText === 'You sure? Still no?') {
-                noButton.innerText = 'Pretty please baby? Still a no?';
-                // Increase font size of "Yes" button
-                var yesButton = document.getElementById('yes-button');
-                var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
-                var newSize = parseFloat(currentFontSize) * 2; // Increase font size by 2 times
-                yesButton.style.fontSize = newSize + 'px';
-            }
-        } 
-        
+        document.getElementById('no-button').innerText = 'You sure? Pleaseeee?'; 
+        // Increase font size of "Yes" button
+        var yesButton = document.getElementById('yes-button');
+        var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
+        var newSize = parseFloat(currentFontSize) * 1.5; // Increase font size by 1.5 times
+        yesButton.style.fontSize = newSize + 'px';
     } else {
         // If neither "Yes" nor "No" was clicked, show an alert message
         alert('Invalid option!');
@@ -33,7 +25,7 @@ function selectOption(option) {
 
 // Function to flash rainbow colors and then execute a callback function
 function flashRainbowColors(callback) {
-    var colors = ['#ffb3d9', '#ff80bf', '#ff4d94', '#ff1a66', '#cc0052', '#99003d', '#660029']; // Pink color palette
+    var colors = ['#ff0000', '#ff7f00', '#ffff00', '#00ff00', '#0000ff', '#4b0082', '#9400d3'];
     var i = 0;
     var interval = setInterval(function() {
         document.body.style.backgroundColor = colors[i];
